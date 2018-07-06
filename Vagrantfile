@@ -75,14 +75,17 @@ Vagrant.configure("2") do |config|
    yum install -y https://centos6.iuscommunity.org/ius-release.rpm
    yum install -y python35u python35u-libs python35u-devel python35u-pip 
    rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6
-   yum -y install http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-   yum -y install docker-io
-   git clone https://github.com/mitmproxy/mitmproxy
-   rm -rf ./web-subscriber-mng-system 
-   git clone https://github.com/hiroyannnn/web-subscriber-mng-system
-   bash ./web-subscriber-mng-system/tool/run.sh
+  # yum -y install http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+  # yum -y install docker-io
+  # git clone https://github.com/mitmproxy/mitmproxy
+  # rm -rf ./web-subscriber-mng-system 
+  # git clone https://github.com/hiroyannnn/web-subscriber-mng-system
+  # bash ./web-subscriber-mng-system/tool/run.sh
+   rm -rf ./ika-tweet
+   git clone https://github.com/hiroyannnn/ika-tweet.git
+   /usr/bin/pip3.5 install requests requests_oauthlib
   SHELL
-  config.vm.provision "docker"
+  #config.vm.provision "docker"
 
 end
 
